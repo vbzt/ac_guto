@@ -1,0 +1,469 @@
+@import "variables";
+@import "fonts";
+@import "mixin";
+@import "global";
+
+
+/* header */
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 32px;
+    background-color: transparent;
+    position: fixed;
+    z-index: 1;
+    backdrop-filter: blur(2px);
+    nav{
+        width: 10%;
+        @include around(row);
+    }
+    a{
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+    a:hover{
+        color: $accent;
+    }
+    h3{
+        font-size: 1.2rem;
+    }
+    span{
+        color: $accent
+    }
+}
+/* header */ 
+
+
+/* main, post */
+#main-section, #post-section, #os-section, #driver-section, #app-section, #site-section{
+    @include flex(column);
+    background-color: $background;
+    height: 100%;
+    width: 100%;
+    .main-title{
+        @include flex(row);
+        text-align: center;
+        width: 100%;
+    }
+    .container{
+        filter: drop-shadow(0px 0px 3px $primary);
+        padding: 2% 5%;
+        border-radius: 7px;
+        
+        width: 75%;
+        background-color: $secondary;
+        height: 60%;
+        @include flex(row);
+        .img-container, .text-container{
+            
+            @include flex(row);
+            height: 70%;
+            width: 100%;
+            
+        }
+
+        .text-container{
+            @include flex(column)
+        }
+        .text{
+            margin-top: 5%;
+            font-weight: 500;
+            font-size: 1.2rem;
+            text-align: start;
+        }
+        .title{ 
+            width: 100%;
+            text-align: start;
+        }
+        a{
+            min-width: 50%;
+            @include flex(column);
+        }
+
+        button{   
+            width: 100%;
+            margin-top: 1rem;
+            padding: 1rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+            text-align: center;
+            border: 1px solid transparent ;
+            border-radius: 6px;
+            background-color: $accent;
+            color: $background;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: transparent;
+            border: 1px solid $accent;
+            color: $text;
+            
+        }
+    }
+}
+#os-section img, #app-section img, #google-section img{
+    width: 95%;
+
+}
+
+
+/* main, post */
+
+/* power, bios */
+#power-section, #bios-section, #kernel-section, #login-section, #google-section{
+    @include flex(row);
+    background-color: $background;
+    height: 100%;
+    width: 100%;
+    
+    .container{
+        filter: drop-shadow(0px 0px 3px $primary);
+        padding: 2% 5%;
+        border-radius: 7px;
+        
+        width: 75%;
+        background-color: $secondary;
+        height: 60%;
+        @include flex(row-reverse);
+        .img-container, .text-container{
+            
+            @include flex(row-reverse);
+            height: 70%;
+            width: 100%;
+            img{
+                height: 100%;
+            }
+        }
+
+        .text-container{
+            @include flex(column)
+        }
+        .text{
+            margin-top: 5%;
+            font-weight: 500;
+            font-size: 1.2rem;
+            text-align: start;
+        }
+        .title{ 
+            width: 100%;
+            text-align: start;
+        }
+        a{
+            min-width: 50%;
+            @include flex(column);
+        }
+
+        button{   
+            width: 100%;
+            margin-top: 1rem;
+            padding: 1rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+            text-align: center;
+            border: 1px solid transparent ;
+            border-radius: 6px;
+            background-color: $accent;
+            color: $background;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: transparent;
+            border: 1px solid $accent;
+            color: $text;
+            
+        }
+    }
+}
+/* power, bios */
+
+footer{
+    background-color: $background;
+    color: #111;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+
+@media only screen and (min-width: 100px) and (max-width: 700px){
+    header{
+        
+        padding: 16px;
+        .tag{
+            font-size: 1rem;
+            width:  10%;
+        }
+        a{
+            font-size: 0.7rem;
+
+        }
+        nav{
+            width: 20%;
+        }
+    }
+    #main-section, #post-section, #os-section, #driver-section, #app-section, #site-section, #power-section, #kernel-section, #bios-section, #login-section, #google-section{
+      .container{
+            height: 60%;
+            @include flex(column-reverse);
+            .img-container, .text-container{
+                @include flex(row);
+                height: 50%;
+                width: 100%;
+                img{
+                    max-height: 80%;
+                }
+            }
+    
+            .text-container{
+                @include flex(column);
+               
+            }
+            .text{
+                margin-top: 5%;
+                font-weight: 500;
+                font-size: 0.6rem;
+                text-align: center;
+            }
+            .title{ 
+                width: 100%;
+                font-size: 0.6rem;
+                text-align: center;
+            }
+            a{
+                min-width: 50%;
+                @include flex(column);
+            }
+    
+            button{   
+                width: 100%;
+                margin-top: 1rem;
+                padding: 1rem;
+                font-size: 0.8rem;
+                font-weight: 500;
+                text-align: center;
+                border: 1px solid transparent ;
+                border-radius: 6px;
+                background-color: $accent;
+                color: $background;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: transparent;
+                border: 1px solid $accent;
+                color: $text;
+                
+            }
+            
+        }
+    } 
+    #os-section .img-container img{
+        height: 40%;
+    
+    } 
+    footer{
+        font-size: 0.6rem;
+    } 
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1200px){
+    header{
+        
+        padding: 32px;
+        .tag{
+            font-size: 1.4rem;
+            width: 20%;
+        }
+        a{
+            font-size: 1.4rem;
+
+        }
+        nav{
+            width: 20%;
+        }
+    }
+    #main-section, #post-section, #os-section, #driver-section, #app-section, #site-section, #power-section, #kernel-section, #bios-section, #login-section, #google-section{
+      .container{
+            height: 60%;
+            width: 80%;
+            @include flex(column-reverse);
+            .img-container, .text-container{
+                @include flex(row);
+                height: 50%;
+                width: 100%;
+                img{
+                    max-height: 80%;
+                }
+            }
+    
+            .text-container{
+                @include flex(column);
+               
+            }
+            .text{
+                margin-top: 5%;
+                font-weight: 500;
+                font-size: 0.8rem;
+                text-align: center;
+            }
+            .title{ 
+                width: 100%;
+                font-size: 1rem;
+                text-align: center;
+            }
+            a{
+                min-width: 50%;
+                @include flex(column);
+            }
+    
+            button{   
+                width: 100%;
+                margin-top: 1rem;
+                padding: 1rem;
+                font-size: 1.2rem;
+                font-weight: 500;
+                text-align: center;
+                border: 1px solid transparent ;
+                border-radius: 6px;
+                background-color: $accent;
+                color: $background;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: transparent;
+                border: 1px solid $accent;
+                color: $text;
+                
+            }
+            
+        }
+        footer{
+            font-size: 0.6rem;
+        }
+    } 
+    #os-section .img-container img{
+        height: 70%;
+    
+    }  
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1700px){
+    header a{
+        font-size: 1rem;
+    }
+    #main-section, #post-section, #os-section, #driver-section, #app-section, #site-section{
+      .container{
+            height: 60%;
+            width: 80%;
+            @include flex(row);
+            .img-container, .text-container{
+                @include flex(row);
+                height: 90%;
+                width: 100%;
+                img{
+                    max-height: 100%;
+                }
+            }
+    
+            .text-container{
+                @include flex(column);
+               
+            }
+            .text{
+                margin-top: 5%;
+                font-weight: 500;
+                font-size: 0.8rem;
+                text-align: start;
+            }
+            .title{ 
+                width: 100%;
+                font-size: 1rem;
+                text-align: start;
+            }
+            a{
+                min-width: 50%;
+                @include flex(column);
+            }
+    
+            button{   
+                width: 100%;
+                margin-top: 1rem;
+                padding: 1rem;
+                font-size: 1.2rem;
+                font-weight: 500;
+                text-align: center;
+                border: 1px solid transparent ;
+                border-radius: 6px;
+                background-color: $accent;
+                color: $background;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: transparent;
+                border: 1px solid $accent;
+                color: $text;
+                
+            }
+            
+        }
+    } 
+    #power-section, #bios-section, #kernel-section, #login-section, #google-section{
+        .container{
+              height: 60%;
+              width: 80%;
+              @include flex(row-reverse);
+              .img-container, .text-container{
+                  @include flex(row);
+                  height: 90%;
+                  width: 100%;
+                  img{
+                      max-height: 100%;
+                  }
+              }
+      
+              .text-container{
+                  @include flex(column);
+                 
+              }
+              .text{
+                  margin-top: 5%;
+                  font-weight: 500;
+                  font-size: 0.8rem;
+                  text-align: start;
+              }
+              .title{ 
+                  width: 100%;
+                  font-size: 1rem;
+                  text-align: start;
+              }
+              a{
+                  min-width: 50%;
+                  @include flex(column);
+              }
+      
+              button{   
+                  width: 100%;
+                  margin-top: 1rem;
+                  padding: 1rem;
+                  font-size: 1.2rem;
+                  font-weight: 500;
+                  text-align: center;
+                  border: 1px solid transparent ;
+                  border-radius: 6px;
+                  background-color: $accent;
+                  color: $background;
+                  cursor: pointer;
+              }
+              button:hover{
+                  background-color: transparent;
+                  border: 1px solid $accent;
+                  color: $text;
+                  
+              }
+              
+          }
+      }
+      footer{
+        font-size: 0.8rem;
+    }   
+}
